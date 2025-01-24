@@ -1,0 +1,24 @@
+.promo {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 16px;
+        .card {
+            padding: 10px 0;
+            border-radius: 16px;
+            background-color: #efefef;
+            .card-child {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                width:60%;
+                margin: auto;
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+}

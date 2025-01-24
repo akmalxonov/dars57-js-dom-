@@ -1,0 +1,105 @@
+.famous {
+    padding: 50px 0 0 0;
+
+    h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        i {
+            font-size: 16px;
+            margin-left: 10px;
+        }
+    }
+    .btn-see{
+        font-size: 16px;
+        font-weight: 600;
+        display: block;
+        width: 60%;
+        margin: auto;
+        padding: 14px 0;
+        border-radius: 8px;
+        background-color:#d0d3d9;
+        border: none;
+    }
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 40px 20px;
+        margin-bottom: 40px;
+        .card2 {
+            height: 475px;
+            .img {
+                height: 310px;
+                border-radius: 8px;
+                overflow: hidden;
+                transition: 0.5s ease-in-out;
+                margin-bottom: 12px;
+
+                img {
+                    &:hover {
+                        transform: scale(1.05);
+                        transition: 0.5s ease-in-out;
+                    }
+                }
+            }
+
+            .all {
+                padding: 0 8px 8px 8px;
+                height: 142px;
+                display: flex;
+                flex-direction: column;
+                .name {
+                    font-size: 15px;
+                    font-weight: 400;
+                }
+
+                .comment {
+                    font-size: 12px;
+                    gap: 3px;
+                    display: flex;
+                    align-items: center;
+                    color: gray;
+
+                    .fa-star {
+                        margin-bottom: -1px;
+                        font-size: 8px;
+                        color: gold;
+                    }
+                }
+
+                .become {
+                    background-color: yellow;
+                    padding: 1px 4px;
+                    width: 105px;
+                    border-radius: 4px;
+                    font-size: 12px;
+                    margin-top: 5px;
+                    font-weight: 400;
+                }
+
+                .shop {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: auto;
+                    .price{
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                    .old-price{
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: gray;
+                        text-decoration: line-through;
+                    }
+                    .btn{
+                        padding: 1px 12px;
+                        border-radius: 50%;
+                        border: 1px solid gray;
+                        color: gray;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+}

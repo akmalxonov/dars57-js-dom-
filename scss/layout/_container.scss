@@ -1,0 +1,12 @@
+.container {
+    width: 1400px;
+    margin: 0 auto;
+}
+@include mobile() {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        min-width: 374px;
+        max-width: 571px;
+    }
+}

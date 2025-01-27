@@ -1,5 +1,6 @@
 header {
     .nav {
+        cursor: pointer;
         &__wrapper-top {
             display: flex;
             align-items: center;
@@ -9,10 +10,17 @@ header {
 
             .top-left-list {
                 display: flex;
-                align-items: center;
+                align-items: end;
                 gap: 24px;
                 font-size: 16px;
                 font-weight: 500;
+                .top-item{
+                    img{
+                        width: 24px;
+                        height: 24px;
+                        margin-bottom: -5px;
+                    }
+                }
             }
 
             .top-right-list {

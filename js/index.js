@@ -1,44 +1,67 @@
 const wrapperElemnt = document.querySelector(".famous__wrapper")
+const wrapper2Elemnt = document.querySelector(".famous2__wrapper")
+console.log(wrapper2Elemnt);
+
 async function fetchProducts() {
     try {
-        const result = await fetch("http://localhost:5000/products");
+        const result = await fetch("https://dummyjson.com/products");
         const res = await result.json();
-        console.log(res);
-        console.log(result);
-        
-        const products = res.data
+        const products = res.products
         products.forEach(product => {
             let become1 = product.price/12
             let become = become1.toFixed(3)
-            let oldPrice = product.price*2
-            wrapperElemnt.appendChild(createCard(product.image, product.name, product.rating,become,oldPrice, product.price))
+            let oldPrice = product.price*2;
+            wrapperElemnt.appendChild(createCard(product.thumbnail, product.title, product.rating,become,oldPrice, product.price))
+            wrapper2Elemnt.appendChild(createCard(product.thumbnail, product.title, product.rating,become,oldPrice, product.price))
         });
     } catch (err) {
         console.log(err);
     }
 }
 fetchProducts()
+let newElement
 function createCard(img, name, comment,become,oldPrice, price) {
-    let newElement = document.createElement("div")
+    newElement = document.createElement("div")
     newElement.classList.add("card2")
     newElement.innerHTML = `
-                <div class="img">
+            <div class="img">
+                <i class="fa-regular fa-heart"></i>
                 <img src="${img}" alt="">
             </div>
             <div class="all">
                 <h4 class="name">${name}</h4>
-                <p class="comment"><i class="fa-solid fa-star"></i> ${comment} (...sharhlar)</p>
-                <h6 class="become">${become}so'm/oyiga</h6>
+                <p class="comment"><i class="fa-solid fa-star"></i> ${comment} (500 sharhlar)</p>
+                <h6 class="become">${become}$/oyiga</h6>
                 <div class="shop">
                     <div class="prices">
                         <h5 class="old-price">${oldPrice}</h5>
-                        <h5 class="price">${price}so'm</h5>
+                        <h5 class="price">${price}$</h5>
                     </div>
-                    <button class="btn"><i class="fa-solid fa-bag-shopping"></i></button>
+                    <button class="btn"><img src="/assents/images/shopping.svg" alt=""></button>
                 </div>
             </div>`
-    return newElement
+            const heartIcon = newElement.querySelector('.fa-heart');
+            heartIcon.addEventListener('click', function () {
+                if (heartIcon.classList.contains('fa-regular')) {
+                    heartIcon.classList.remove('fa-regular');
+                    heartIcon.classList.add('fa-solid');
+                    heartIcon.style.transform = "scale(1.3)";
+                    heartIcon.style.transition = "transform 0.2s ease";
+                    setTimeout(()=>{
+                        heartIcon.style.transform = "scale(1)";
+                    },100)
+                } else {
+                    heartIcon.classList.remove('fa-solid');
+                    heartIcon.classList.add('fa-regular');
+                }
+            });
+    return newElement;
 }
+
+
+
+
+
 
 
 // kanspekt 
